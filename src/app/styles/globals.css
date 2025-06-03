@@ -1,0 +1,14 @@
+@font-face {
+  font-family: "font";
+  src: url("/fonts/GothamBook.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "dark";
+  src: url("/fonts/sakura.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "light";
+  src: url("/fonts/sunflower.otf") format("opentype");
+}

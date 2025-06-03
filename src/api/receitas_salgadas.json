@@ -1,0 +1,30 @@
+[
+  {
+    "titulo": "rtgnbhtr",
+    "imagem": "rtyntrynty",
+    "preco": 1,
+    "legenda": "rtntntr",
+    "descricao": "nrttrnrntytrnntr",
+    "serve": 1,
+    "preparo": "ebhn rngt tryn",
+    "tempo": 20,
+    "ingredientes": [
+      {
+        "qtd": 0,
+        "und": "a/g (à gosto)",
+        "nome": "sal"
+      },
+      {
+        "qtd": 2,
+        "und": "x (unidade)",
+        "nome": "Ovos"
+      },
+      {
+        "qtd": 3,
+        "und": "x (unidade)",
+        "nome": "Tomate"
+      }
+    ],
+    "data": "2025-03-14"
+  }
+]

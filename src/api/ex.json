@@ -1,0 +1,30 @@
+[
+  {
+    "data": "",
+    "titulo": "Macarrão ao Molho Alfredo",
+    "imagem": "https://static.vecteezy.com/system/resources/previews/024/678/605/non_2x/chicken-alfredo-with-fettuccine-parmesan-cheese-porcelain-plate-background-italian-style-generative-ai-free-photo.jpeg",
+    "preco": 3,
+    "legenda": "Um clássico de minha querida mãe, este macarrão é a alegria em forma de prato.",
+    "descricao": "",
+    "serve": 2,
+    "preparo": ". . .",
+    "tempo": 25,
+    "ingredientes": [
+      {
+        "qtd": 0.5,
+        "und": "pç",
+        "nome": "Parmesão"
+      },
+      {
+        "qtd": 0.5,
+        "und": "pç",
+        "nome": "Pecorino Romano"
+      },
+      {
+        "qtd": 0.25,
+        "und": "pct",
+        "nome": "Macarrão Fettucini (ou sua escolha)"
+      }
+    ]
+  }
+]
