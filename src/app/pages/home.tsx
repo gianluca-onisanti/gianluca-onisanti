@@ -16,30 +16,28 @@ export default function HomePage() {
     setHover(!hover);
   };
 
+  const headerSize = {
+    xs: mode === "dark" ? "42px" : "30px",
+    md: mode === "dark" ? "85px" : "61px",
+  };
+
   return (
-    <Container>
-      <Grid2 mt={4} container spacing={{ xs: 1, md: 6 }} alignItems={"center"}>
-        {/* Para estudo: 
-          XS = ExtraSmall (Mobile); 
-          MD = Medium (Telas P e Tablets); 
-          LG = Large (PCs e TVs); 
-        */}
-        <Grid2 size={{ xs: 12, md: 6, lg: 6 }}>
-          <Box sx={{ height: "200px" }}>
-            <Typography
-              sx={{
-                fontSize: mode === "dark" ? "64px" : "46px",
-                color: "white",
-                fontFamily: theme.palette.mode,
-                textShadow: "2px 2px 4px rgba(0, 0, 0, 0.7)",
-                lineHeight: 0,
-              }}
-            >
-              Gianluca Onisanti
-            </Typography>
-          </Box>
-        </Grid2>
+    <Grid2 mt={4} container spacing={{ xs: 1, md: 6 }} alignItems={"center"}>
+      <Grid2 size={{ xs: 12, md: 6, lg: 6 }}>
+        <Box sx={{ height: "200px" }} textAlign={{ xs: "center", md: "start" }}>
+          <Typography
+            fontSize={headerSize}
+            sx={{
+              color: "white",
+              fontFamily: theme.palette.mode,
+              textShadow: "2px 2px 4px rgba(0, 0, 0, 0.7)",
+              lineHeight: 0,
+            }}
+          >
+            Gianluca Onisanti
+          </Typography>
+        </Box>
       </Grid2>
-    </Container>
+    </Grid2>
   );
 }

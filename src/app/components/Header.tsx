@@ -8,6 +8,8 @@ export default function Header() {
   return (
     <Box
       sx={{
+        display: "flex",
+        position: "absolute",
         marginLeft: "20px",
         justifyContent: "flex-end",
       }}
