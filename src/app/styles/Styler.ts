@@ -10,26 +10,19 @@ export function useSwitcher(mode: "light" | "dark") {
           text: "#ffe7de",
         },
         primary: {
-          main: "#541f1f",
-          alt: "#5f000e",
+          main: "#ffcc00",
+          alt: "#735f0e",
         },
         secondary: {
-          main: "#fcefef",
-        },
-        background: {
-          default: "#ffe7de",
-          paper: "#ffffff",
+          main: "#a8f2ff",
         },
         text: {
-          primary: "#212121",
+          primary: "#00000075",
           secondary: "#757575",
         },
-        logo: {
-          shadow: "#541f1f",
-        },
         button: {
-          primary: "#541f1f",
-          secondary: "#e57f78",
+          primary: "#ffcc00",
+          secondary: "#2a1809",
         },
       },
     },
@@ -47,16 +40,9 @@ export function useSwitcher(mode: "light" | "dark") {
         secondary: {
           main: "#704041",
         },
-        background: {
-          default: "#541f1f",
-          paper: "#424242",
-        },
         text: {
-          primary: "#ffffff",
+          primary: "#ffffff25",
           secondary: "#bdbdbd",
-        },
-        logo: {
-          shadow: "#541f1f",
         },
         button: {
           primary: "#ffe7de",

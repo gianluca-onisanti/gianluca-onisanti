@@ -3,9 +3,9 @@
 
 import { ReactNode, useEffect, useState } from "react";
 import Box from "@mui/material/Box";
-import Header from "./components/Header";
 import { useTheme } from "@mui/material";
 import CssBaseline from "@mui/material/CssBaseline";
+import ThemeToggle from "./components/ThemeToggle";
 
 interface RootContentProps {
   children: ReactNode;
@@ -40,7 +40,7 @@ export default function RootContent({ children }: RootContentProps) {
     padding: 3,
     backdropFilter: "blur(10px)",
     overflow: "hidden",
-    boxShadow: "0 0 0px calc(0.4vw + 0.4vh) #00000075",
+    boxShadow: `0 0 0px calc(0.3vw + 0.3vh) ${theme.palette.text.primary}`,
   };
 
   useEffect(() => {
@@ -55,7 +55,18 @@ export default function RootContent({ children }: RootContentProps) {
   return (
     <Box sx={style as any}>
       <CssBaseline />
-      <Header />
+      <Box
+        sx={{
+          display: "flex",
+          position: "absolute",
+          width: "100%",
+          padding: 0.5,
+          justifyContent: "end",
+          zIndex: 2,
+        }}
+      >
+        <ThemeToggle />
+      </Box>
       <Box sx={substyle}>{children}</Box>
     </Box>
   );
