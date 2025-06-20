@@ -11,7 +11,7 @@ export function useSwitcher(mode: "light" | "dark") {
         },
         primary: {
           main: "#ffcc00",
-          alt: "#735f0e",
+          dark: "#6f4805",
         },
         secondary: {
           main: "#a8f2ff",
@@ -35,10 +35,10 @@ export function useSwitcher(mode: "light" | "dark") {
         },
         primary: {
           main: "#e57f78",
-          alt: "#ff92c4",
+          dark: "#704041",
         },
         secondary: {
-          main: "#704041",
+          main: "#ff92c4",
         },
         text: {
           primary: "#ffffff25",
@@ -57,8 +57,37 @@ export function useSwitcher(mode: "light" | "dark") {
 
 export function useStyles() {
   const theme = useTheme();
+  const { mode } = theme.palette;
 
   return {
+    header: {
+      title: {
+        color: "white",
+        fontFamily: mode,
+        textShadow: "1px 1px 4px rgba(0, 0, 0, 0.7)",
+        position: "relative",
+        display: "inline-block",
+        lineHeight: 1,
+        "&::after": {
+          content: '""',
+          position: "absolute",
+          left: 0,
+          right: 0,
+          bottom: mode === "light" ? -4 : 0,
+          height: "2px",
+          borderRadius: "10px",
+          boxShadow: "1px 1px 4px rgba(0, 0, 0, 0.7)",
+          backgroundColor: "#ffffff",
+        },
+      },
+      sub: {
+        mt: "2px",
+        ml: "4px",
+        color: "white",
+        fontFamily: mode,
+        textShadow: "1px 1px 4px rgba(0, 0, 0, 0.7)",
+      },
+    },
     toolbar: {
       display: "flex",
       justifyContent: "space-between",
@@ -89,6 +118,31 @@ export function useStyles() {
           transform: "scale(1.1)",
         },
       },
+    },
+    box: {
+      content: {
+        p: 2,
+        borderLeft: { md: "1px solid rgba(255, 255, 255, 0.2)" },
+        pl: { md: 4 },
+        textAlign: { xs: "center", md: "end" },
+        height: "100%",
+      },
+      body: {
+        padding: 1,
+        borderRadius: "2.5px",
+        backgroundColor: "#00000015",
+      },
+    },
+    text: {
+      textShadow: `
+        -1px -1px 0px rgba(0, 0, 0, 0.5),
+        1px -1px 0px rgba(0, 0, 0, 0.5),
+        -1px 1px 0px rgba(0, 0, 0, 0.5),
+        1px 1px 0px rgba(0, 0, 0, 0.5), 
+        0px 0px 8px rgba(0, 0, 0, 0.7) 
+      `,
+      fontFamily: "main",
+      color: "white",
     },
   };
 }

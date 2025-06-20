@@ -7,3 +7,8 @@
   font-family: "light";
   src: url("/fonts/sunflower.ttf") format("truetype");
 }
+
+@font-face {
+  font-family: "main";
+  src: url("/fonts/bahnschrift.ttf") format("truetype");
+}

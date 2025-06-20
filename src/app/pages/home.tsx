@@ -1,183 +1,174 @@
 "use client";
 
-import { useTheme, Grid2, Typography, Box, Button } from "@mui/material";
-import { useState } from "react";
-// We still need `useEffect` if you plan to re-add the click sound,
-// but for this structural change alone, it's not strictly necessary.
-// If you want the sound, remember to add back the sound logic from our previous conversation.
+import {
+  useTheme,
+  Grid2,
+  Typography,
+  Box,
+  Button,
+  Grow,
+  Collapse,
+} from "@mui/material";
+import { useState, useEffect, useMemo } from "react";
+import { useStyles } from "@styles/Styler";
+import { LanguageSwitcher, useTranslation } from "../components/useTranslation";
 
 export default function HomePage() {
   const theme = useTheme();
+  const sx = useStyles();
   const { mode } = theme.palette;
 
-  const [activeMenuItem, setActiveMenuItem] = useState("Início");
-  const tabs = [
-    "Início",
-    "Projetos",
-    "Minha Trajetória",
-    "Expertises",
-    "Contato",
+  const { t, language, changeLanguage } = useTranslation("pt-BR");
+
+  const [activeMenuItem, setActiveMenuItem] = useState("home");
+  const [showLeftPanel, setShowLeftPanel] = useState(true); // Novo estado para controlar a animação do painel esquerdo
+
+  const menuItems = [
+    { key: "home", defaultText: "Início" },
+    { key: "projects", defaultText: "Projetos" },
+    { key: "journey", defaultText: "Minha Trajetória" },
+    { key: "expertise", defaultText: "Expertises" },
+    { key: "contact", defaultText: "Contato" },
   ];
 
-  function getFontSize(number: number, mode: "dark" | "light") {
+  useEffect(() => {
+    setShowLeftPanel(false);
+    const timer = setTimeout(() => {
+      setShowLeftPanel(true);
+    }, 300);
+
+    return () => clearTimeout(timer);
+  }, [language]);
+
+  function buttonStyle(itemKey: string) {
+    return {
+      "&:hover": {
+        backgroundColor: "rgba(255, 255, 255, 0.05)",
+      },
+      transition: "all 0.3s ease-in-out",
+      color: activeMenuItem === itemKey ? theme.palette.primary.main : "white",
+      backgroundColor:
+        activeMenuItem === itemKey
+          ? "rgba(255, 255, 255, 0.05)"
+          : "transparent",
+      fontSize: getFontSize(14, mode),
+      fontFamily: theme.palette.mode,
+      textTransform: "none",
+      minWidth: "150px",
+      justifyContent: "flex-start",
+      borderRadius: "8px",
+      paddingLeft: activeMenuItem === itemKey ? "18px" : "16px",
+      position: "relative",
+      ...(activeMenuItem === itemKey && {
+        "&::before": {
+          content: '""',
+          position: "absolute",
+          left: 0,
+          top: "50%",
+          transform: "translateY(-50%)",
+          height: "100%",
+          width: "4px",
+          backgroundColor: theme.palette.primary.main,
+          borderRadius: "0 4px 4px 0",
+        },
+      }),
+    };
+  }
+
+  function getFontSize(number: number, mode: string) {
     if (mode === "dark") {
       return number;
     }
     return number * 0.9111;
   }
 
-  const renderContent = () => {
-    switch (activeMenuItem) {
-      case "Início":
+  const renderContent = (menuItemKey: string) => {
+    switch (menuItemKey) {
+      case "home":
         return (
-          <Typography color="white">Bem-vindo à página inicial!</Typography>
+          <Box sx={sx.box.body}>
+            <Typography sx={sx.text}>{t("content.home")}</Typography>
+          </Box>
         );
-      case "Projetos":
-        return (
-          <Typography color="white">Aqui estão meus projetos...</Typography>
-        );
-      case "Minha Trajetória":
-        return <Typography color="white">Minha jornada até aqui...</Typography>;
-      case "Expertises":
-        return (
-          <Typography color="white">
-            Minhas habilidades e conhecimentos...
-          </Typography>
-        );
-      case "Contato":
-        return <Typography color="white">Entre em contato comigo!</Typography>;
+      case "projects":
+        return <Typography sx={sx.text}>{t("content.projects")}</Typography>;
+      case "journey":
+        return <Typography sx={sx.text}>{t("content.journey")}</Typography>;
+      case "expertise":
+        return <Typography sx={sx.text}>{t("content.expertise")}</Typography>;
+      case "contact":
+        return <Typography sx={sx.text}>{t("content.contact")}</Typography>;
       default:
-        return (
-          <Typography color="white">Selecione uma opção no menu.</Typography>
-        );
+        return <Typography sx={sx.text}>{t("content.select")}</Typography>;
     }
   };
 
+  const memoizedCurrentContent = useMemo(() => {
+    return renderContent(activeMenuItem);
+  }, [activeMenuItem, language, t]);
+
   return (
     <Grid2 container spacing={{ xs: 1, md: 6 }} alignItems={"flex-start"}>
-      {/* Grid for Name/Title AND Menu (Now 6/12 on md/lg, full height) */}
       <Grid2 size={{ xs: 12, md: 6, lg: 6 }}>
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            gap: 2, // Added gap for overall spacing within this column
-            alignItems: { xs: "center", md: "flex-start" },
-            height: "100%", // Makes this column take full available height
-            pr: { md: 2 }, // Optional: padding-right for spacing before content column
-          }}
-        >
-          {/* Your Name and Title (Moved here) */}
-          <Box
-            textAlign={{
-              xs: "center",
-              md: "start",
-            }}
-            sx={{ mb: 4 }} // Still a margin-bottom to separate from menu items
-          >
-            <Typography
-              fontSize={getFontSize(36, mode)}
-              sx={{
-                color: "white",
-                fontFamily: theme.palette.mode,
-                textShadow: "1px 1px 4px rgba(0, 0, 0, 0.7)",
-                position: "relative",
-                display: "inline-block",
-                lineHeight: 1,
-                "&::after": {
-                  content: '""',
-                  position: "absolute",
-                  left: 0,
-                  right: 0,
-                  bottom: 0,
-                  height: "2px",
-                  borderRadius: "10px",
-                  boxShadow: "1px 1px 4px rgba(0, 0, 0, 0.7)",
-                  backgroundColor: "#ffffff",
-                },
-              }}
-            >
-              Gianluca Onisanti
-            </Typography>
-            <Typography
-              fontSize={getFontSize(16, mode)}
-              sx={{
-                mt: "2px",
-                ml: "4px",
-                color: "white",
-                fontFamily: theme.palette.mode,
-                textShadow: "1px 1px 4px rgba(0, 0, 0, 0.7)",
-              }}
-            >
-              Desenvolvedor Full Stack & Designer
-            </Typography>
-          </Box>
+        <Collapse in={showLeftPanel} timeout={300}>
           <Box
             sx={{
               display: "flex",
               flexDirection: "column",
-              gap: 1,
+              gap: 2,
+              alignItems: { xs: "center", md: "flex-start" },
+              height: "100%",
+              pr: { md: 2 },
             }}
           >
-            {tabs.map((item) => (
-              <Button
-                key={item}
-                onClick={() => setActiveMenuItem(item)}
-                sx={{
-                  "&:hover": {
-                    backgroundColor: "rgba(255, 255, 255, 0.05)",
-                  },
-                  transition: "all 0.3s ease-in-out",
-                  color:
-                    activeMenuItem === item
-                      ? theme.palette.primary.main
-                      : "white",
-                  backgroundColor:
-                    activeMenuItem === item
-                      ? "rgba(255, 255, 255, 0.05)"
-                      : "transparent",
-                  fontSize: getFontSize(14, mode),
-                  fontFamily: theme.palette.mode,
-                  textTransform: "none",
-                  minWidth: "150px",
-                  justifyContent: "flex-start",
-                  borderRadius: "8px",
-                  paddingLeft: activeMenuItem === item ? "18px" : "16px",
-                  position: "relative",
-                  ...(activeMenuItem === item && {
-                    "&::before": {
-                      content: '""',
-                      position: "absolute",
-                      left: 0,
-                      top: "50%",
-                      transform: "translateY(-50%)",
-                      height: "100%",
-                      width: "4px",
-                      backgroundColor: theme.palette.primary.main,
-                      borderRadius: "0 4px 4px 0",
-                    },
-                  }),
-                }}
-              >
-                {item}
-              </Button>
-            ))}
+            <Box
+              textAlign={{
+                xs: "center",
+                md: "start",
+              }}
+              sx={{ mb: 4 }}
+            >
+              <Typography fontSize={getFontSize(36, mode)} sx={sx.header.title}>
+                {t("header.title")}
+              </Typography>
+              <Typography fontSize={getFontSize(16, mode)} sx={sx.header.sub}>
+                {t("header.subtitle")}
+              </Typography>
+            </Box>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                gap: 1,
+              }}
+            >
+              {menuItems.map((item) => (
+                <Button
+                  key={item.key}
+                  onClick={() => setActiveMenuItem(item.key)}
+                  sx={buttonStyle(item.key)}
+                >
+                  {t(`nav.${item.key}`)}
+                </Button>
+              ))}
+            </Box>
           </Box>
-        </Box>
+        </Collapse>
       </Grid2>
       <Grid2 size={{ xs: 12, md: 6, lg: 6 }}>
-        <Box
-          sx={{
-            p: 2,
-            borderLeft: { md: "1px solid rgba(255, 255, 255, 0.2)" },
-            pl: { md: 4 },
-            textAlign: { xs: "center", md: "end" },
-            height: "100%",
-          }}
-        >
-          {renderContent()}
+        <Box sx={sx.box.content}>
+          <Grow in={true} timeout={300} key={`${activeMenuItem}-${language}`}>
+            <div>{memoizedCurrentContent}</div>
+          </Grow>
         </Box>
       </Grid2>
+      <Box sx={{ display: "flex", position: "absolute", bottom: 0, left: 0 }}>
+        <LanguageSwitcher
+          translator={t}
+          changeLanguage={changeLanguage}
+          currentLanguage={language}
+        />
+      </Box>
     </Grid2>
   );
 }

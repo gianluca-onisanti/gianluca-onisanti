@@ -1,0 +1,27 @@
+{
+  "header": {
+    "title": "Gianluca Onisanti",
+    "subtitle": "Desarrollador Full Stack y Diseñador"
+  },
+  "nav": {
+    "home": "Inicio",
+    "projects": "Proyectos",
+    "journey": "Mi Trayectoria",
+    "expertise": "Habilidades",
+    "contact": "Contacto"
+  },
+  "content": {
+    "home": "¡Bienvenido a la página de inicio!",
+    "projects": "Aquí están mis proyectos...",
+    "journey": "Mi viaje hasta ahora...",
+    "expertise": "Mis habilidades y conocimientos...",
+    "contact": "¡Ponte en contacto conmigo!",
+    "select": "Seleccione una opción del menú"
+  },
+  "language": {
+    "select": "Seleccionar Idioma",
+    "portuguese": "Portugués",
+    "english": "Inglés",
+    "spanish": "Español"
+  }
+}
