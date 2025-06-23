@@ -57,16 +57,15 @@ interface LanguageSwitcherProps {
 const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
   changeLanguage,
   currentLanguage,
-  translator, // <<< Receba `t` como prop <<<
+  translator,
 }) => {
   const theme = useTheme();
-  // >>> REMOVA ISTO: const { t } = useTranslation(); <<<
 
-  // As labels agora usam a função `t` recebida via props
   const languages = [
     { code: "pt-BR", label: translator("language.portuguese") },
     { code: "en", label: translator("language.english") },
     { code: "es", label: translator("language.spanish") },
+    { code: "it", label: translator("language.italian") },
   ];
 
   const handleLanguageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
