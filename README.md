@@ -1,14 +1,13 @@
-# Potfolio: Gianluca Onisanti
+# Portfolio: Gianluca Onisanti
 
 Chosse your language above.
 
----
+## [Portuguese](readme/README.pt-br.md)
 
-## Módulos do Projeto
+## [English](readme/README.en.md)
 
-- **[Portuguese](readme/README.pt-br.md)**
-- **[English](readme/README.en.md)**
-- **[Spanish](readme/README.es.md)**
-- **[Italian](readme/README.it.md)**
+## [Spanish](readme/README.es.md)
+
+## [Italian](readme/README.it.md)
 
 ---
