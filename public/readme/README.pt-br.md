@@ -6,18 +6,18 @@ Bem-vindo ao código-fonte do meu site. Como você deve ter notado, existem dois
 
 ## 🧪 Tecnologias Utilizadas:
 
-- **Next.js** : O framework escolhido para o front. Simplesmente, o meu favorito! Prático, robusto e escalável caso eu queira criar funcionalidades mais pesadas futuramente.
-- **Material UI** : Fácil de usar e customizar, essa biblioteca de componentes estilo React poupa bastante tempo na hora de dar forma ao aplicativo.
-- **useTranslations (Autoral)** : Sim, um Hook de internacionalização, criado por mim. Anteriormente usado para rodar em Docker sem as gambiarras que o i18next exigia, resolvi trazer essa joia para cá.
-- **Vercel** : Onde o aplicativo será hospedado. Bem simples de configurar, e entrega um pipeline de produção apenas escutando a branch!
+- **Next.js**: o framework escolhido para o front. Simplesmente, o meu favorito! Prático, robusto e escalável caso eu queira criar funcionalidades mais pesadas futuramente.
+- **Material UI**: fácil de usar e customizar, essa biblioteca de componentes estilo React poupa bastante tempo na hora de dar forma ao aplicativo.
+- **useTranslations (autoral)**: sim, um Hook de internacionalização, criado por mim. Anteriormente usado para rodar em Docker sem as gambiarras que o i18next exigia, resolvi trazer essa joia para cá.
+- **Vercel**: onde o aplicativo será hospedado. Bem simples de configurar, e entrega um pipeline de produção apenas escutando a branch!
 
 ---
 
 ## 🌟 Diferenciais:
 
-- **Temas:** Temos alternância entre temas claro e escuro, mas de uma forma mais excêntrica e experimental. 🌻🌸
-- **Internacionalização**: Você a
-- **Animações e Design Responsivo**: A aplicação foi pensada desde o começo para ser adaptável entre os dispositivos, entregando uma experiência agradável e memorável.
+- **Temas**: temos alternância entre temas claro e escuro, mas de uma forma mais excêntrica e experimental. 🌻🌸
+- **Internacionalização**: a internacionalização de aplicações é algo crucial para uma aplicação multicultural!
+- **Animações e Design Responsivo**: a aplicação foi pensada desde o começo para ser adaptável entre os dispositivos, entregando uma experiência agradável e memorável.
 
 ---
 

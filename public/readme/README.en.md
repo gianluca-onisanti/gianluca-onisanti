@@ -6,18 +6,18 @@ Welcome to my website's source code. There are too portfolio repos, but this one
 
 ## 🧪 Technologies Used:
 
-- **Next.js**: The chosen frontend framework. Simply the best one, Practical, robust, and scalable in case I want to build more functionalities.
-- **Material UI**: Easy and open for customization, this component ibrary packs-a-punch when building the frontend.
-- **useTranslations (by me)**: Yeah! An internationalization Hook created by me. Previously used for another Docker project in order to run straightforwardly, I decided to bring it here.
-- **Vercel**: Where the application is hosted! Listening to new features as soon as I deploy them, It's free and works quite good with React based applications.
+- **Next.js**: the chosen frontend framework. Simply the best one, Practical, robust, and scalable in case I want to build more functionalities.
+- **Material UI**: easy and open for customization, this component ibrary packs-a-punch when building the frontend.
+- **useTranslations (by me)**: yeah! An internationalization Hook created by me. Previously used for another Docker project in order to run straightforwardly, I decided to bring it here.
+- **Vercel**: where the application is hosted! Listening to new features as soon as I deploy them, It's free and works quite good with React based applications.
 
 ---
 
 ## 🌟 Differentiators:
 
-- **Themes:** We have a switcher between light and dark themes, but I decided to add I grain of authenticity. 🌻🌸
-- **Internationalization**: Hey, english speaker! There's room for you even on the README. Crazy, didn't it?
-- **Animations and Responsive Design**: The app was design to work across devices, delivering a pleasant and memorable experience to its users.
+- **Themes:** we have a switcher between light and dark themes, but I decided to add I grain of authenticity. 🌻🌸
+- **Internationalization**: hey, english speaker! There's room for you even on the README. Crazy, didn't it?
+- **Animations and Responsive Design**: the app was design to work across devices, delivering a pleasant and memorable experience to its users.
 
 ---
 

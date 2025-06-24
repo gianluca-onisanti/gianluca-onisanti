@@ -6,18 +6,18 @@ Benvenuto nel codice sorgente del mio sito web. Ci sono due repository di portfo
 
 ## 🧪 Tecnologie Utilizzate:
 
-- **Next.js:** Il framework frontend scelto. Semplicemente il migliore, pratico, robusto e scalabile nel caso volessi costruire più funzionalità in futuro.
-- **Material UI**: Facile e aperto alla personalizzazione, questa libreria di componenti è un vero asso nella manica per la costruzione del frontend.
-- **useTranslations (mia creazoni)**: Sì! Un Hook di internazionalizzazione creato da me. Precedentemente utilizzato per un altro progetto Docker per essere eseguito senza problemi, ho deciso di portarlo qui.
-- **Vercel**: Dove l'applicazione è ospitata! Ascoltando le nuove funzionalità non appena le implemento, è gratuito e funziona piuttosto bene con le applicazioni basate su React.
+- **Next.js**: il framework frontend scelto. Semplicemente il migliore, pratico, robusto e scalabile nel caso volessi costruire più funzionalità in futuro.
+- **Material UI**: facile e aperto alla personalizzazione, questa libreria di componenti è un vero asso nella manica per la costruzione del frontend.
+- **useTranslations (mia creazoni)**: un Hook di internazionalizzazione creato da me. Precedentemente utilizzato per un altro progetto Docker per essere eseguito senza problemi, ho deciso di portarlo qui.
+- **Vercel**: dove l'applicazione è ospitata! Ascoltando le nuove funzionalità non appena le implemento, è gratuito e funziona piuttosto bene con le applicazioni basate su React.
 
 ---
 
 ## 🌟 Elementi Distintivi:
 
-- **Temi:** Abbiamo un selettore tra temi chiari e scuri, ma ho deciso di aggiungere un tocco di autenticità. 🌻🌸
-- **Internazionalizzazione**: Sto ancora imparando l'italiano. Questo è per voi, miei parenti siciliani!
-- **Animazioni e Design Responsivo**: L'applicazione è stata progettata per funzionare su tutti i dispositivi, offrendo un'esperienza piacevole e memorabile ai suoi utenti.
+- **Temi**: abbiamo un selettore tra temi chiari e scuri, ma ho deciso di aggiungere un tocco di autenticità. 🌻🌸
+- **Internazionalizzazione**: sto ancora imparando l'italiano. Questo è per voi, miei parenti siciliani!
+- **Animazioni e Design Responsivo**: l'applicazione è stata progettata per funzionare su tutti i dispositivi, offrendo un'esperienza piacevole e memorabile ai suoi utenti.
 
 ---
 

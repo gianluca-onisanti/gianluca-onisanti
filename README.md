@@ -2,12 +2,12 @@
 
 Chosse your language above.
 
-## [Portuguese](readme/README.pt-br.md)
+## [Portuguese](public/readme/README.pt-br.md)
 
-## [English](readme/README.en.md)
+## [English](public/readme/README.en.md)
 
-## [Spanish](readme/README.es.md)
+## [Spanish](public/readme/README.es.md)
 
-## [Italian](readme/README.it.md)
+## [Italian](public/readme/README.it.md)
 
 ---
