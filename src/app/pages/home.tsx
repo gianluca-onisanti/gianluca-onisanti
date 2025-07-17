@@ -9,7 +9,7 @@ import {
   Grow,
   Collapse,
 } from "@mui/material";
-import { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { useStyles } from "@styles/Styler";
 import { LanguageSwitcher, useTranslation } from "../components/useTranslation";
 
@@ -83,23 +83,72 @@ export default function HomePage() {
   }
 
   const renderContent = (menuItemKey: string) => {
+    const getTextWithLineBreaks = (key: string) => {
+      const text = t(key);
+      return text.split("\n").map((line, index) => (
+        <React.Fragment key={index}>
+          {line}
+          {index < text.split("\n").length - 1 && <br />}
+        </React.Fragment>
+      ));
+    };
+
     switch (menuItemKey) {
       case "home":
         return (
           <Box sx={sx.box.body}>
-            <Typography sx={sx.text}>{t("content.home")}</Typography>
+            <Typography sx={sx.text}>
+              {getTextWithLineBreaks("content.home")}
+            </Typography>
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "space-evenly",
+                padding: "40px 0px",
+                textAlign: "center",
+              }}
+            >
+              <Button
+                href={"https://github.com/gianluca-onisanti"}
+                target={"blank"}
+                sx={sx.button.primary}
+              >
+                {t("button.home.github")}
+              </Button>
+              <Button sx={sx.button.primary}>{t("button.home.cv")}</Button>
+            </Box>
           </Box>
         );
       case "projects":
-        return <Typography sx={sx.text}>{t("content.projects")}</Typography>;
+        return (
+          <Typography sx={sx.text}>
+            {getTextWithLineBreaks("content.projects")}
+          </Typography>
+        );
       case "journey":
-        return <Typography sx={sx.text}>{t("content.journey")}</Typography>;
+        return (
+          <Typography sx={sx.text}>
+            {getTextWithLineBreaks("content.journey")}
+          </Typography>
+        );
       case "expertise":
-        return <Typography sx={sx.text}>{t("content.expertise")}</Typography>;
+        return (
+          <Typography sx={sx.text}>
+            {getTextWithLineBreaks("content.expertise")}
+          </Typography>
+        );
       case "contact":
-        return <Typography sx={sx.text}>{t("content.contact")}</Typography>;
+        return (
+          <Typography sx={sx.text}>
+            {getTextWithLineBreaks("content.contact")}
+          </Typography>
+        );
       default:
-        return <Typography sx={sx.text}>{t("content.select")}</Typography>;
+        return (
+          <Typography sx={sx.text}>
+            {getTextWithLineBreaks("content.select")}
+          </Typography>
+        );
     }
   };
 
@@ -109,7 +158,7 @@ export default function HomePage() {
 
   return (
     <Grid2 container spacing={{ xs: 1, md: 6 }} alignItems={"flex-start"}>
-      <Grid2 size={{ xs: 12, md: 6, lg: 6 }}>
+      <Grid2 size={{ xs: 12, md: 4, lg: 4 }}>
         <Collapse in={showLeftPanel} timeout={300}>
           <Box
             sx={{
@@ -155,7 +204,7 @@ export default function HomePage() {
           </Box>
         </Collapse>
       </Grid2>
-      <Grid2 size={{ xs: 12, md: 6, lg: 6 }}>
+      <Grid2 size={{ xs: 12, md: 8, lg: 8 }}>
         <Box sx={sx.box.content}>
           <Grow in={true} timeout={300} key={`${activeMenuItem}-${language}`}>
             <div>{memoizedCurrentContent}</div>

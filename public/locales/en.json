@@ -18,11 +18,16 @@
     "contact": "Get in touch with me!",
     "select": "Select an option from the menu."
   },
+  "button": {
+    "home": {
+      "github": "My GitHub",
+      "cv": "Download my CV"
+    }
+  },
   "language": {
     "select": "Select Language",
     "portuguese": "Portuguese",
     "english": "English",
-    "spanish": "Spanish",
-    "italian": "Italian"
+    "spanish": "Spanish"
   }
 }

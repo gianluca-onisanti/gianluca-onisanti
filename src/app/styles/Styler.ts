@@ -22,7 +22,7 @@ export function useSwitcher(mode: "light" | "dark") {
         },
         button: {
           primary: "#ffcc00",
-          secondary: "#2a1809",
+          secondary: "#00000075",
         },
       },
     },
@@ -101,20 +101,28 @@ export function useStyles() {
     },
     button: {
       primary: {
-        fontFamily: "font",
+        fontFamily: "main",
         width: 250,
         boxShadow: "4px 4px #00000050",
         border: 4,
-        borderRadius: "10px",
-        borderColor: theme.palette.secondary.main,
-        color: theme.palette.secondary.main,
-        backgroundColor: theme.palette.button.primary,
+        borderRadius: "25px",
+        borderColor: theme.palette.button.primary,
+        color: theme.palette.button.primary,
+        backgroundColor: theme.palette.text.primary,
         justifyContent: "space-around",
-        transition: "all 0.3s ease-in-out",
+        transition: "all 0.25s ease-in-out",
+        textShadow: `
+        -1px -1px 0px rgba(0, 0, 0, 0.5),
+        1px -1px 0px rgba(0, 0, 0, 0.5),
+        -1px 1px 0px rgba(0, 0, 0, 0.5),
+        1px 1px 0px rgba(0, 0, 0, 0.5), 
+        0px 0px 8px rgba(0, 0, 0, 0.7) 
+      `,
         "&:hover": {
-          color: theme.palette.primary.main,
-          backgroundColor: theme.palette.button.secondary,
-          borderColor: theme.palette.primary.main,
+          textShadow: "unset",
+          color: theme.palette.button.secondary,
+          backgroundColor: theme.palette.button.primary,
+          borderColor: theme.palette.button.secondary,
           transform: "scale(1.1)",
         },
       },
@@ -122,15 +130,15 @@ export function useStyles() {
     box: {
       content: {
         p: 2,
-        borderLeft: { md: "1px solid rgba(255, 255, 255, 0.2)" },
+        borderLeft: { md: "1px solid #ffffff33" },
         pl: { md: 4 },
         textAlign: { xs: "center", md: "end" },
         height: "100%",
       },
       body: {
-        padding: 1,
+        padding: "20px 30px",
         borderRadius: "2.5px",
-        backgroundColor: "#00000015",
+        backgroundColor: theme.palette.text.primary,
       },
     },
     text: {

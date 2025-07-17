@@ -65,7 +65,6 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
     { code: "pt-BR", label: translator("language.portuguese") },
     { code: "en", label: translator("language.english") },
     { code: "es", label: translator("language.spanish") },
-    { code: "it", label: translator("language.italian") },
   ];
 
   const handleLanguageChange = (event: React.ChangeEvent<HTMLInputElement>) => {

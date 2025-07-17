@@ -11,18 +11,23 @@
     "contact": "Contato"
   },
   "content": {
-    "home": "Bem-vindo à página inicial!",
-    "projects": "Aqui estão meus projetos...",
+    "home": "Sou um Desenvolvedor Full Stack apaixonado por entregar uma experiência vislumbrante e singular a meu usuário, além de trazer uma facilidade e um diferencial quando falamos em Ferramental de IA e Soluções Inovadoras!\n\n Meu carro-chefe é NextJS e React, utilizando ferramentas de estilo como Material UI e TailwindCSS. Por outro lado, desnvolvo APIs com Flask (Python) e possuo uma bagagem em gestão de ELT cem DataClouds, como Snowflake e AmazonS3.\n\n Já participei e executei todos os processos de desenvovlvimento de uma aplicação, desde o design inicial e arquitetura em Figma/Photoshop até o deploy em ambiente Docker em Cloud, passando por fluxos CI/CD e testes unitários com Jest.\n\n E poucas palavras: eu gosto de superar problemas e desafios, além de trazer o capricho e personalidade que meu usuário não esquecerá facilmente!",
+    "projects": "Alguns de meus projetos que você também pode encontrar lá no GitHub!",
     "journey": "Minha jornada até aqui...",
     "expertise": "Minhas habilidades e conhecimentos...",
     "contact": "Entre em contato comigo!",
     "select": "Selecione uma opção no menu."
   },
+  "button": {
+    "home": {
+      "github": "Meu GitHub",
+      "cv": "Baixe meu CV"
+    }
+  },
   "language": {
     "select": "Selecionar Idioma",
     "portuguese": "Português",
     "english": "Inglês",
-    "spanish": "Espanhol",
-    "italian": "Italiano"
+    "spanish": "Espanhol"
   }
 }
